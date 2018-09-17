@@ -1,0 +1,14 @@
+@mixin button{
+    color:$secondary-color;
+    padding:15px 25px;
+    border-radius:30px;
+    cursor: pointer;
+     background-image: linear-gradient($main-color);
+     text-transform: uppercase;
+     border:none;
+}
+@mixin spanColorClip{
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient($main-color);
+}

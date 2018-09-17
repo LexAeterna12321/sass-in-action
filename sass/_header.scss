@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    background-image: linear-gradient($main-color);
+    ;
+}
+
+html {
+    font-family: 'Open Sans',
+        sans-serif;
+    font-size: 10px;
+    color: $main-color;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    height: 80vh;
+    margin: 0 auto;
+    background-image: url("../img/headerImg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+header::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    color: $secondary-color;
+
+    .logo {
+        display: flex;
+        flex-grow: 1;
+        font-size: 1.4rem;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 50px;
+    }
+
+    ul {
+        width: 50%;
+        display: flex;
+        list-style: none;
+        font-size: 1.2rem;
+        align-content: center;
+        justify-content: space-around;
+
+        li {
+            display: flex;
+            flex-basis: 9%;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: $secondary-color;
+        }
+    }
+
+    button {
+        margin: 0 1%;
+        flex-grow: 1;
+        align-self: center;
+        cursor: pointer;
+        @include button;
+    }
+
+    button:nth-of-type(1) {
+        background-image: none;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    button:nth-of-type(2) {
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.6);
+        background-image: linear-gradient($main-color);
+
+    }
+
+    span {
+        @include spanColorClip;
+    }
+
+    .logo span {
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: solid 1px #30d89d;
+        border-radius: 50%;
+        font-size: 2.6rem;
+    }
+}
+
+header section {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-size: 2.6rem;
+    color: $secondary-color;
+
+
+    & h1 {
+        margin-bottom: 35px;
+        font-weight: 300;
+        
+        span {
+            @include spanColorClip;
+        }
+    }
+
+    h4 {
+        @extend h1;
+        font-size: 2.2rem;
+    }
+    button{
+        @include button;
+        
+    }
+}
