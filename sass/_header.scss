@@ -8,19 +8,19 @@
     width: 100%;
     background-image: linear-gradient($main-color);
     ;
+    overflow: hidden;
 }
 
 html {
     font-family: 'Open Sans',
         sans-serif;
     font-size: 10px;
-    color: $main-color;
 }
 
 header {
     position: relative;
-    width: 90%;
-    height: 80vh;
+    width: $sectionsWidth;
+    height: 85vh;
     margin: 0 auto;
     background-image: url("../img/headerImg.jpg");
     background-position: center;
@@ -50,7 +50,11 @@ nav {
         font-size: 1.4rem;
         justify-content: space-around;
         align-items: center;
-        margin-right: 50px;
+       
+        margin: 0 50px 0 15px;
+        p i{
+            margin-right:7px;
+        }
     }
 
     ul {
@@ -137,6 +141,5 @@ header section {
     }
     button{
         @include button;
-        
     }
 }

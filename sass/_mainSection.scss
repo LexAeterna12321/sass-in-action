@@ -1,0 +1,119 @@
+main{
+    width:$sectionsWidth;
+    margin: 0 auto;
+    background-color: $secondary-color;
+    i{
+        font-size: 6rem;
+        padding: 20px 0 15px 0;
+    }
+}
+
+main section{
+    width:90%;
+    height: 70vh;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+        flex-basis: 25%;
+        // 
+        height: 100%;
+    }
+}
+
+// boxes
+
+main section div.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color:$secondary-color;
+    box-shadow: 0 0 6px 1px rgba(220,220,220, 0.5);
+    &.box1{
+        border-top-left-radius: $border-radius;
+        transform: translateY(-15%);
+    }
+     &.box2 {
+         border-top-left-radius: $border-radius;
+         border-top-right-radius: $border-radius;
+         transform: translateY(-20%);
+         button{
+             margin-top:10%;
+             @include button;
+         }
+         h5{
+             margin-top:5%;
+         }
+     }
+    &.box3 {
+         border-top-right-radius: $border-radius;
+        transform: translateY(-15%);
+    }
+    div{
+        flex-basis: 20%;
+        text-align: center;
+        h5{
+            margin-top:15%;
+            font-size: 2.2rem;
+        }
+        h6{
+            font-size: 1.2rem;
+            color:$grayfont;
+        }
+    }
+    div:last-child{
+        flex-grow: 1;
+    }
+}
+
+.box.box1 div:first-child::after,
+.box.box3 div:first-child::after {
+    content: "";
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin:25% 0;
+    background-image: linear-gradient($main-color);
+}
+
+.box div:nth-of-type(2),
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 2rem;
+    a{  
+        display: block;
+        margin-top: 10%;
+        text-decoration: none;
+        color:#30d89d;
+    }
+    h5{
+        margin-bottom: 10%;
+    }
+}
+
+main ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    list-style: none;
+
+    li{
+        flex-basis: 15%;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: $grayfont;
+        font-weight: 700;
+        span{
+            @include spanColorClip
+        }
+    }
+}
