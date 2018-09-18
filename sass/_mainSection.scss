@@ -1,21 +1,25 @@
-main{
-    width:$sectionsWidth;
+main {
+    width: $sectionsWidth;
     margin: 0 auto;
     background-color: $secondary-color;
-    i{
+
+    i {
         font-size: 6rem;
         padding: 20px 0 15px 0;
     }
 }
 
-main section{
-    width:90%;
+// section1
+
+main .mainSection1 {
+    width: 90%;
     height: 70vh;
-    margin:0 auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    div{
+
+    div {
         flex-basis: 25%;
         // 
         height: 100%;
@@ -24,45 +28,54 @@ main section{
 
 // boxes
 
-main section div.box{
+main .mainSection1 div.box {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color:$secondary-color;
-    box-shadow: 0 0 6px 1px rgba(220,220,220, 0.5);
-    &.box1{
+    background-color: $secondary-color;
+    box-shadow: 0 0 6px 1px rgba(220, 220, 220, 0.5);
+
+    &.box1 {
         border-top-left-radius: $border-radius;
         transform: translateY(-15%);
     }
-     &.box2 {
-         border-top-left-radius: $border-radius;
-         border-top-right-radius: $border-radius;
-         transform: translateY(-20%);
-         button{
-             margin-top:10%;
-             @include button;
-         }
-         h5{
-             margin-top:5%;
-         }
-     }
+
+    &.box2 {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        transform: translateY(-20%);
+
+        button {
+            margin-top: 10%;
+            @include button;
+        }
+
+        h5 {
+            margin-top: 5%;
+        }
+    }
+
     &.box3 {
-         border-top-right-radius: $border-radius;
+        border-top-right-radius: $border-radius;
         transform: translateY(-15%);
     }
-    div{
+
+    div {
         flex-basis: 20%;
         text-align: center;
-        h5{
-            margin-top:15%;
+
+        h5 {
+            margin-top: 15%;
             font-size: 2.2rem;
         }
-        h6{
+
+        h6 {
             font-size: 1.2rem;
-            color:$grayfont;
+            color: $grayfont;
         }
     }
-    div:last-child{
+
+    div:last-child {
         flex-grow: 1;
     }
 }
@@ -76,44 +89,194 @@ main section div.box{
     display: block;
     width: 100%;
     height: 3px;
-    margin:25% 0;
+    margin: 25% 0;
     background-image: linear-gradient($main-color);
 }
 
 .box div:nth-of-type(2),
-{
+    {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     font-size: 2rem;
-    a{  
+
+    a {
         display: block;
         margin-top: 10%;
         text-decoration: none;
-        color:#30d89d;
+        color: #30d89d;
     }
-    h5{
+
+    h5 {
         margin-bottom: 10%;
     }
 }
 
-main ul{
+main ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width:90%;
+    width: 90%;
     margin: 0 auto;
     padding: 20px 0;
     list-style: none;
 
-    li{
+    li {
         flex-basis: 15%;
         font-size: 1.4rem;
         cursor: pointer;
         color: $grayfont;
         font-weight: 700;
-        span{
+
+        span {
             @include spanColorClip
         }
     }
+}
+
+// section2
+
+main .mainSection2 {
+    height: 55vh;
+    width: 100%;
+     display: flex;
+    div {
+        height: 100%;
+        position: relative;
+         &:first-child {
+            flex-basis: 40%;
+             overflow: hidden;
+            img{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                min-width: 100%;
+                min-height: 100%;  
+            }
+            &::before {
+             position: relative;
+             left:0;
+             top:0;
+             z-index: 2;
+             @include darkLayer;
+            }
+            h2{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                font-size: 6rem;
+                color:$secondary-color;
+                z-index: 3;
+            }
+         }
+
+         &:last-child {
+             flex-grow:1;
+             background-image: linear-gradient($main-color);
+             position: relative;
+             display: flex;
+             flex-direction: column;
+             align-items: flex-start;
+             justify-content: center;
+             color:$secondary-color;
+             h2,h5,button{
+                 font-size: 3rem;
+                 margin: 2% 12%;
+             }
+             h5{
+                font-size: 1.4rem;
+             }
+             button {
+                 font-size: 1.2rem;
+                 @include button;
+                 background-image: none;
+                 background-color: transparent;
+                 border: 1px solid rgba(255, 255, 255, 0.6); 
+             }
+         }
+    }
+}
+main .mainSection3{
+    display: flex;
+    height: 40vh;
+    width:100%;
+    font-size: 1.3rem;
+    aside{
+        flex-basis: 25%;
+        text-align: center;
+        
+        .logo {
+            width: 100%;
+            display: flex;
+            font-size: 1.4rem;
+            justify-content: space-around;
+            align-items: center;
+            margin:15% 0;
+            display: inline-block;
+            span {
+                  @include spanColorClip;
+                  display: inline-block;
+                  width: 30px;
+                  height: 30px;
+                  text-align: center;
+                  line-height: 30px;
+                  border: solid 1px #30d89d;
+                  border-radius: 50%;
+                  font-size: 2.6rem;
+            }
+        }
+        p i {
+            margin-right: 7px;
+            font-size: 1.3rem;
+        }
+        .socials{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            i{
+                display: block;
+                font-size: 3.2rem;
+                margin:0 20px;
+                border-radius:50%;
+            }
+        }
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        h5{
+            font-size: 2rem;
+            margin-bottom:15%;
+            color:$grayfont;
+        }
+        div{
+            flex-basis:15%;
+            text-align: left;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color:$grayfont;
+            transition:  .4s;
+            margin: 10px 0;
+            &:hover{
+                color:#30d89d;
+            }
+        }
+
+    }
+}
+
+footer{
+    width:$sectionsWidth;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4vh;
+    color: $grayfont;
+    background-color: $secondary-color;
+    font-size: 1.8rem;
 }
