@@ -7,7 +7,6 @@
 .container {
     width: 100%;
     background-image: linear-gradient($main-color);
-    ;
     overflow: hidden;
     height: 270vh;
 }
@@ -23,9 +22,82 @@ header {
     width: $sectionsWidth;
     height: 85vh;
     margin: 0 auto;
-    background-image: url("../img/headerImg.jpg");
+    background-image: url("../img/headerImg1.jpg");
     background-position: center;
     background-size: cover;
+    transition: all 2.5s; //trs
+
+    .slider {
+        border-top-color: #30d89d;
+        position: absolute;
+        top: 50%;
+        right: 15%;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        text-align: center;
+        border-radius: 50%;
+        color: $secondary-color;
+        font-size: 2rem;
+        border: 3px solid rgba(255, 255, 255, 0.6);
+
+        ::after {
+            content: "";
+            @extend .slider;
+            width: 100%;
+            height: 100%;
+            right: auto;
+            top: -3px; //border
+            left: -3px;
+            border-top-color: #30d89d;
+            z-index: 2;
+            transform: rotate(45deg);
+            animation: rotation 20s infinite linear both; //rotation
+        }
+
+        span {
+            color: #30d89d;
+            font-size: 3rem;
+        }
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    20% {
+        transform: rotate(45deg);
+    }
+
+    25% {
+        transform: rotate(135deg);
+    }
+
+    45% {
+        transform: rotate(135deg);
+    }
+
+    50% {
+        transform: rotate(225deg);
+    }
+
+    70% {
+        transform: rotate(225deg);
+    }
+
+    75% {
+        transform: rotate(315deg);
+    }
+
+    95% {
+        transform: rotate(315deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
 }
 
 header::before {
@@ -48,8 +120,9 @@ nav {
         justify-content: space-around;
         align-items: center;
         margin: 0 50px 0 15px;
-        p i{
-            margin-right:7px;
+
+        p i {
+            margin-right: 7px;
         }
     }
 
@@ -124,7 +197,7 @@ header section {
     & h1 {
         margin-bottom: 35px;
         font-weight: 300;
-        
+
         span {
             @include spanColorClip;
         }
@@ -134,7 +207,8 @@ header section {
         @extend h1;
         font-size: 2.2rem;
     }
-    button{
+
+    button {
         @include button;
     }
 }
